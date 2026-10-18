@@ -62,7 +62,7 @@
 .mobileMorePanel{display:none}
 @media(max-width:600px){
  .sidebar>.navItem:nth-of-type(n+5){display:none!important}
- .sidebar>.mobileMore{display:flex!important;flex:1 0 20%;min-width:0;width:auto;height:48px;margin:0;padding:5px 1px;flex-direction:column;align-items:center;justify-content:center;gap:3px;border-radius:8px;font-size:8px!important;line-height:1.1;white-space:normal;text-align:center;color:#737c89}
+ .sidebar>.navItem.mobileMore{display:flex!important;flex:1 0 20%;min-width:0;width:auto;height:48px;margin:0;padding:5px 1px;flex-direction:column;align-items:center;justify-content:center;gap:3px;border-radius:8px;font-size:8px!important;line-height:1.1;white-space:normal;text-align:center;color:#737c89}
  .mobileMorePanel{position:fixed;display:none;z-index:30;right:10px;bottom:72px;width:min(250px,calc(100vw - 20px));padding:8px;background:#fff;border:1px solid var(--line);border-radius:13px;box-shadow:0 12px 36px #18232b24}
  .mobileMorePanel.open{display:flex;flex-direction:column;gap:4px}
  .mobileMorePanel button{display:flex;align-items:center;gap:10px;width:100%;padding:12px;border:0;border-radius:8px;background:#fff;color:var(--ink);text-align:left;font-size:12px}
