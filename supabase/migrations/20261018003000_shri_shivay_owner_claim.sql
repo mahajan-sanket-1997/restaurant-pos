@@ -7,7 +7,18 @@ create table if not exists private.restaurant_setup_claims (
 revoke all on schema private from public, anon, authenticated;
 revoke all on private.restaurant_setup_claims from public, anon, authenticated;
 
--- The production claim hash is provisioned separately for the initial Shri Shivay setup.
+-- Create the restaurant only if it is not already present.
+insert into public.restaurants (name, currency, timezone)
+select 'Shri Shivay', 'INR', 'Asia/Kolkata'
+where not exists (select 1 from public.restaurants where lower(name) = lower('Shri Shivay'));
+
+-- Store only the SHA-256 hash of the one-time high-entropy setup code.
+insert into private.restaurant_setup_claims (restaurant_id, code_hash)
+select r.id, '59eeebd1c5152bdaa62356b3d65ed1d73725ca04d9779d95414ab918595ece11'
+from public.restaurants r
+where lower(r.name) = lower('Shri Shivay')
+  and not exists (select 1 from public.profiles p where p.restaurant_id = r.id and p.role = 'owner')
+on conflict (restaurant_id) do nothing;
 create or replace function public.claim_restaurant_owner(claim_code text, owner_name text)
 returns uuid
 language plpgsql
