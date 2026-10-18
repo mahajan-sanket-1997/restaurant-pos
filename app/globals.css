@@ -7,3 +7,52 @@
 
 .tableWorkspace{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.9fr);gap:16px;align-items:start}.tableDetail{min-width:0;border:1px solid var(--line);border-radius:10px;padding:15px;background:#fff;position:sticky;top:12px}.tableDetail .panelHead h2{font:700 17px Manrope,sans-serif;margin:6px 0}.tableDetail .realMenuList{max-height:260px;overflow:auto}.tableDetail .realMenuRow{padding:10px 0}.tableDetail .authForm{margin-top:12px}.detailTotal{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding:15px 0 4px;margin-top:7px;color:#596471;font-size:12px}.detailTotal strong{font:800 21px Manrope,sans-serif;color:var(--ink)}.paymentForm{padding-top:4px}.tableTile.selected{box-shadow:0 0 0 2px var(--green);border-color:var(--green)}
 @media(max-width:1100px){.tableWorkspace{grid-template-columns:1fr}.tableDetail{position:static}.tableDetail .realMenuList{max-height:350px}}
+
+
+/* Mobile-first layout tuning for Poco X5 Pro (1080x2400 physical; commonly ~393 CSS px wide). */
+@media(max-width:600px){
+  html,body{width:100%;max-width:100%;overflow-x:hidden}
+  .shell{display:block;min-height:100dvh;padding-bottom:66px}
+  .sidebar{position:fixed;z-index:20;left:0;right:0;bottom:0;width:100%;height:62px;min-height:0;padding:5px 4px calc(5px + env(safe-area-inset-bottom));border-right:0;border-top:1px solid var(--line);display:flex;flex-direction:row;align-items:center;justify-content:space-around;gap:2px;background:#fff}
+  .brand,.sidebar>.navLabel,.sideBottom{display:none!important}
+  .sidebar>.navItem{flex:1;min-width:0;width:auto;height:48px;margin:0;padding:5px 2px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;border-radius:8px;font-size:9px!important;line-height:1.1;white-space:nowrap;color:#737c89}
+  .sidebar>.navItem:not(.active){font-size:9px!important;color:#737c89}
+  .sidebar>.navItem svg{width:18px;height:18px;flex-shrink:0}
+  .sidebar>.navItem:nth-of-type(n+5){display:none!important}
+  .main{width:100%;min-width:0}
+  .topbar{position:sticky;top:0;z-index:5;height:48px;padding:0 10px}
+  .content{width:100%;max-width:100%;padding:14px 10px 18px}
+  .heading{gap:8px;margin-bottom:14px}
+  .heading h1{font-size:20px;line-height:1.2;overflow-wrap:anywhere}
+  .heading p{font-size:11px}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+  .stat{min-width:0;padding:10px}
+  .workspace,.tableWorkspace{grid-template-columns:minmax(0,1fr);gap:10px}
+  .tableWorkspace>*{min-width:0}
+  .tableDetail{width:100%;padding:12px;position:static}
+  .tableDetail .realMenuList{max-height:none;overflow:visible}
+  .tableDetail .realMenuRow{align-items:flex-start;gap:7px;flex-wrap:wrap}
+  .tableDetail .realMenuRow>div:last-child{max-width:100%;flex-wrap:wrap}
+  .tableDetail .realMenuRow .lightButton{min-height:34px}
+  .tableGrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  .tableTile{min-height:100px;padding:9px 7px}
+  .tableTile small{font-size:9px}
+  .tableTile strong{font-size:11px}
+  .panel{min-width:0;padding:12px}
+  .orderPanel{padding:0}
+  .menuList{max-height:35vh;max-height:35dvh}
+  .realMenuRow{gap:8px}
+  .realMenuRow>div:first-child{min-width:0;flex:1}
+  .realMenuRow>div:last-child{display:flex;align-items:center;gap:6px}
+  .realMenuRow .lightButton{min-height:34px;padding:7px 10px;font-size:11px}
+  .primary,.secondary,.lightButton,.iconButton{touch-action:manipulation}
+  button,input,select,textarea{max-width:100%}
+  .authShell{min-height:100dvh}
+  footer{padding-bottom:8px}
+}
+@media(max-width:360px){
+  .content{padding-left:7px;padding-right:7px}
+  .tableGrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sidebar>.navItem{font-size:8px!important}
+  .heading h1{font-size:18px}
+}
