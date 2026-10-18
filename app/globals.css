@@ -15,7 +15,7 @@
   .shell{display:block;min-height:100dvh;padding-bottom:66px}
   .sidebar{position:fixed;z-index:20;left:0;right:0;bottom:0;width:100%;height:62px;min-height:0;padding:5px 4px calc(5px + env(safe-area-inset-bottom));border-right:0;border-top:1px solid var(--line);display:flex;flex-direction:row;align-items:center;justify-content:space-around;gap:2px;background:#fff}
   .brand,.sidebar>.navLabel,.sideBottom{display:none!important}
-  .sidebar>.navItem{flex:1;min-width:0;width:auto;height:48px;margin:0;padding:5px 2px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;border-radius:8px;font-size:9px!important;line-height:1.1;white-space:nowrap;color:#737c89}
+   .sidebar>.navItem{flex:1 0 20%;min-width:0;width:auto;height:48px;margin:0;padding:5px 1px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;border-radius:8px;font-size:8px!important;line-height:1.1;white-space:normal;text-align:center;color:#737c89}
   .sidebar>.navItem:not(.active){font-size:9px!important;color:#737c89}
   .sidebar>.navItem svg{width:18px;height:18px;flex-shrink:0}
   .sidebar>.navItem:nth-of-type(n+5){display:none!important}
