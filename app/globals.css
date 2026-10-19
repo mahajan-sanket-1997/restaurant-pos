@@ -69,3 +69,4 @@
  .mobileMorePanel button:active,.mobileMorePanel button:hover{background:var(--greenBg);color:var(--green)}
  .mobileMorePanel button small{margin-left:auto;color:var(--muted);font-size:9px}
 }
+.kitchenReadyNotice{background:#edf8f1;border-color:#cfead9;color:#176e50;align-items:flex-start;justify-content:flex-start;line-height:1.5}.kitchenReadyNotice svg{flex-shrink:0;margin-top:1px}.kitchenCard{background:#fff}.kitchenCard .primary{font-size:10px}.kitchenCard .lightButton{background:#f8faf9;color:#42534a;font-size:10px}
